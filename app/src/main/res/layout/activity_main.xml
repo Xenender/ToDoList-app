@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorPrimary"
+    tools:context=".MainActivity">
+
+
+    <!--Scroll pour les tâches à réaliser-->
+
+
+    <TextView
+        android:id="@+id/adj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mes rappels"
+        android:textColor="@color/orange"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/main_gd_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout"
+        tools:ignore="MissingConstraints" />
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/main_gd_4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/main_gd_3">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/main_gd_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".04" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/main_gd_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".96" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/main_gd_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".15" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/main_gd_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".85" />
+
+
+    <!--Fin scroll pour les tâches à réaliser-->
+
+    <ImageView
+        android:id="@+id/open_tache"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_baseline_add_circle_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/open_tools"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_baseline_settings_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!--FOND NOIR POUR EMPECHER CLICK (layout pour empecher que le bouton passe devant le layout tache)-->
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button_Qajout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent_black"
+            android:visibility="gone"
+
+
+            />
+
+    </RelativeLayout>
+
+    <!--FIN-->
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_ajout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/layout_main"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/gd_5"
+        app:layout_constraintLeft_toRightOf="@id/gd_2"
+        app:layout_constraintRight_toLeftOf="@id/gd_3"
+        app:layout_constraintTop_toBottomOf="@id/gd_4">
+
+
+        <RelativeLayout
+            android:id="@+id/layout_quit_calendar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/tache_tv1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <!--
+        <RelativeLayout
+            android:id="@+id/btnCalendar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/tache_gd_calendar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tache_gd_7"
+            android:background="@android:color/transparent"
+            />
+            -->
+
+        <TextView
+            android:id="@+id/tache_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_title"
+            android:text="Rapelle moi"
+            android:textColor="?colorTitle"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tache_gd_7" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/tache_layoutEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintEnd_toEndOf="@id/tache_gd_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/tache_gd_vertical_1"
+            app:layout_constraintTop_toTopOf="@+id/tache_gd_6"
+            android:background="@drawable/border_round"
+            >
+
+
+            <ImageView
+                android:id="@+id/tache_mic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_mic_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingEnd="10dp"/>
+
+            <EditText
+                android:id="@+id/ajout_editText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:fontFamily="@font/helvetica"
+                android:hint="Faire les courses"
+                android:inputType="text"
+                android:paddingLeft="8dp"
+                android:paddingRight="5dp"
+                android:textColor="?colorTitle"
+                android:textColorHint="?hint"
+                android:textCursorDrawable="@color/xlight_grey"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@id/tache_mic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/tache_gd_calendar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tache_tv1"
+
+            />
+
+
+        <ImageView
+            android:id="@+id/tache_switch_right"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tache_tv1" />
+
+        <ImageView
+            android:id="@+id/tache_switch_left"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tache_tv1" />
+
+
+        <ImageView
+            android:id="@+id/btnCalendar"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_baseline_today_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tache_gd_calendar" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_button"
+            android:fontFamily="@font/font_title"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Enregistrer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tache_gd_9" />
+
+        <CalendarView
+            android:id="@+id/calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:dateTextAppearance="@style/CalenderViewDateCustomText"
+            android:theme="@style/CalenderViewCustom"
+            android:visibility="visible"
+            android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tache_gd_calendar" /><!--visible pour le faire charger puis invisible direct dans MainActivity -->
+
+
+        <TextView
+            android:id="@+id/tache_tv_swipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_title"
+            android:text="Swipe"
+            android:textColor="?colorTitle"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@+id/tache_arrow_down"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/tache_arrow_down"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/tache_gd_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".40" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/tache_gd_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".08" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/tache_gd_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".28" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/tache_gd_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".90" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/tache_gd_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".55" />
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/tache_gd_vertical_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".15" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/tache_gd_vertical_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".85" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_tools"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/layout_main"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/gd_5"
+        app:layout_constraintLeft_toRightOf="@id/gd_2"
+        app:layout_constraintRight_toLeftOf="@id/gd_3"
+        app:layout_constraintTop_toBottomOf="@id/gd_4">
+
+
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gd_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".10" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gd_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".9" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gd_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".20" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gd_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".80" />
+
+
+    <!--Fin ajout de tâche-->
+
+</android.support.constraint.ConstraintLayout>
+
+
+

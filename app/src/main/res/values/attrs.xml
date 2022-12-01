@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Other values-->
+    <attr name="colorTitle" format="reference" />
+    <attr name="colorSubTitle" format="reference" />
+    <attr name="main" format="reference" />
+    <attr name="transparent" format="reference" />
+    <attr name="hint" format="reference" />
+
+</resources>
